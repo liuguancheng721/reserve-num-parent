@@ -1,0 +1,37 @@
+server:
+  port: 8202 # 配置端口
+spring:
+  application:
+    name: service-cmn
+  profiles:
+    active: dev # 环境设置为生产环境
+  cloud:
+    nacos:
+      discovery: # 往nacos注册中心注册服务
+        server-addr: localhost:8848
+        username: nocas
+        password: nacos
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hospital?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss # 配置json返回全局时间格式
+    time-zone: GMT+8
+  redis: # 配置Redis
+    host: 192.168.1.104
+    port: 6379
+    database: 0
+    timeout: 180000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: 1
+        max-idle: 8 # 最大阻塞等待时间（负数表示没限制）
+        min-idle: 0
+  cache:
+    type: redis # 配置缓存空间类型
+    cache-names: dict # 配置缓存空间的名字
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml

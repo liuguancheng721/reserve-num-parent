@@ -1,0 +1,33 @@
+server:
+  port: 8201 # 配置端口
+spring:
+  application:
+    name: service-hosp
+  profiles:
+    active: dev # 环境设置为生产环境
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hospital?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  data:
+    mongodb: # 配置mongodb
+      uri: mongodb://192.168.1.104:27017/yygh_hosp
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss # 配置json返回全局时间格式
+    time-zone: GMT+8
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nocas
+        password: nacos
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  level:
+    root: debug # 配置日志级别
+#logging:
+#  level:
+#    root: INFO # 根日志级别是INFO
+#    com.fengzhu: debug # com.fengzhu包及其子包的日志级别是DEBUG

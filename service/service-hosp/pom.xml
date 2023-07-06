@@ -11,5 +11,30 @@
 
     <artifactId>service-hosp</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.fengzhu</groupId>
+            <artifactId>model</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fengzhu</groupId>
+            <artifactId>service-util</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fengzhu</groupId>
+            <artifactId>common-utils</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fengzhu</groupId>
+            <artifactId>service-cmn-client</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+    </dependencies>
 </project>
